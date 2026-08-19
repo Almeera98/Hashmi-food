@@ -7,17 +7,35 @@
     font-family: "inter";
     src: url(./font/Inter_18pt-Regular.ttf);
 }
+/* navbar  */
+.navbar {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 25px;               
+  padding: 15px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ff6600;
+}
 
 h1 {
-  font-size: 32px; /* Apni zaroorat ke hisaab se pixels (px) change kar sakte hain */
+  font-size: 32px; 
 }
 h1 {
   font-size: 32px;      
   font-weight: bold;  
   color: #fff;  
 }
-/*HERo sevtion  */
-    /* Main Banner Container */
+
     .hero-banner-mix {
       position: relative;
       width: 100%;
@@ -29,7 +47,7 @@ h1 {
       justify-content: center;
     }
 
-    /* Background Images Grid (Mix Pics Layout) */
+
     .bg-grid {
       position: absolute;
       top: 0;
@@ -37,8 +55,8 @@ h1 {
       width: 100%;
       height: 100%;
       display: grid;
-      grid-template-columns: repeat(4, 1fr); /* 4 images side-by-side */
-      opacity: 0.45; /* Dark overlay effect for readability */
+      grid-template-columns: repeat(4, 1fr); 
+      opacity: 0.45; 
     }
 
     .bg-grid img {
@@ -47,7 +65,7 @@ h1 {
       object-fit: cover;
     }
 
-    /* Text Overlay Content */
+   
     .hero-content {
       position: relative;
       z-index: 2;
@@ -67,7 +85,7 @@ h1 {
 
     .hero-subtitle {
       font-size: 18px;
-      color: #f1c40f; /* Gold accent */
+      color: #f1c40f; 
       letter-spacing: 1px;
       text-transform: uppercase;
       margin-bottom: 20px;
