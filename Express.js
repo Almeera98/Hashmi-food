@@ -1,19 +1,39 @@
-const express = require("express");
+const express = require('express');
+const path = require('path');
 
-const app = express ();
-const port = 3000;
-app.use(express.urlencoded({ extended: false}))
-app.use(express.json());
+const app = express();
+const PORT = 3000;
 
-app.get('/',(req,res) =>{
-    res.sendFile(__dirname + "/contact.hyml")
-})
+app.use(express.static(path.join(__dirname, 'view')));
 
-app.post("/contact",(req,res)=>{
-    const {name,email} =req.body;
 
-    res.send(`thank you, for This Website`)
-})
-app.listen(port,()=>{
-    console.log(`server is running at http://localhost:${port}`)
-})
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'style.css', 'home.html'));
+});
+
+app.get('/about', (req, res) => {
+    res.sendFile(path.join(__dirname, 'style.css', 'about.html'));
+});
+
+
+app.get('/menu', (req, res) => {
+    res.sendFile(path.join(__dirname, 'style.css', 'menu.html'));
+});
+
+app.get('/location', (req, res) => {
+    res.sendFile(path.join(__dirname, 'style.css', 'location.html'));
+});
+
+
+ app.get('/blog', (req, res) => {
+    res.sendFile(path.join(__dirname, 'style.css', 'feedback.html'));
+});
+
+app.use((req, res) => {
+  res.status(404).send("Page not found");
+});
+
+
+app.listen(PORT, () => {
+    console.log(`Server http://localhost:${PORT} `);
+});
